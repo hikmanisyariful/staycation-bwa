@@ -49,14 +49,16 @@ export default function Button(props) {
         </a>
       );
     } else {
-      <Link
-        to={props.href}
-        className={className.join(" ")}
-        style={props.style}
-        onClick={onClick} //Untuk menjalankan function setelah kita klik
-      >
-        {props.children}
-      </Link>;
+      return (
+        <Link
+          to={props.href}
+          className={className.join(" ")}
+          style={props.style}
+          onClick={onClick} //Untuk menjalankan function setelah kita klik
+        >
+          {props.children}
+        </Link>
+      );
     }
   }
 
@@ -65,7 +67,7 @@ export default function Button(props) {
     <button
       className={className.join(" ")}
       style={props.style}
-      onClick={onClcik}
+      onClick={onClick}
     >
       {props.children}
     </button>
@@ -76,9 +78,10 @@ Button.propTypes = {
   type: PropTypes.oneOf(["button", "link"]), //type dari button akan menerima "button" atau "link"
   onClick: PropTypes.func, //Memastikan onClick menerima function
   target: PropTypes.string, // untuk link external biasanya
-  href: propTypes.string,
+  href: PropTypes.string,
   className: PropTypes.string,
   isDisabled: PropTypes.bool,
+  isExternal: PropTypes.bool,
   isLoading: PropTypes.bool,
   isSmall: PropTypes.bool,
   isLarge: PropTypes.bool,
