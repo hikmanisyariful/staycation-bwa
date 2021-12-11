@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
 export default function Button(props) {
+  // Setup className
   const className = [props.className];
   if (props.isPrimary) className.push("btn-primary");
   if (props.isLarge) className.push("btn-lg");
@@ -15,6 +16,7 @@ export default function Button(props) {
     if (props.onClick) props.onClick();
   };
 
+  // Cek apakah botton menerima props isDisabled atau isLoading
   if (props.isDisabled || props.isLoading) {
     if (props.isDisabled) className.push("disabled");
 
@@ -32,6 +34,7 @@ export default function Button(props) {
     );
   }
 
+  // Mengecek props.type = "link" apakah akan ngelink ke eternal atau ke dalam app
   if (props.type === "link") {
     if (props.isExternal) {
       return (
@@ -57,6 +60,7 @@ export default function Button(props) {
     }
   }
 
+  // Default jika props.type = "button"
   return (
     <button
       className={className.join(" ")}
