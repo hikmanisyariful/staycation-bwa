@@ -3,6 +3,11 @@ import Button from "elements/Button";
 import BrandIcon from "parts/IconText";
 
 export default function Header(props) {
+  // function to get active link nav
+  const getNavLinkClass = path => {
+    return props.location.pathname === path ? " active" : "";
+  };
+
   return (
     <header className="spacing-sm">
       <div className="container">
