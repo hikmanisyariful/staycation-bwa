@@ -65,8 +65,8 @@ header {
     .navbar-nav {
       li.nav-item {
         a {
+          // jika <a> tag punya className = "nav-link"
           &.nav-link {
-            // jika <a> tag punya className = "nav-link"
             color: $gray-900;
             padding-left: 1rem;
             padding-right: 1rem;
