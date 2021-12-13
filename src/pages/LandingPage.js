@@ -10,12 +10,12 @@ import landingPage from "json/landingPage.json";
 export default class LandingPage extends Component {
   render() {
     return (
-      <div>
+      <>
         {/* ...this.props => Passing semua props di class LandingPage ke Header component*/}
         <Header {...this.props}></Header>
         {/* Passing data landingPage Hero */}
         <Hero data={landingPage.hero} />
-      </div>
+      </>
     );
   }
 }
