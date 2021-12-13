@@ -1,5 +1,11 @@
 import React, { Component } from "react";
+
+// Import component
 import Header from "parts/Header";
+import Hero from "parts/Hero";
+
+// Import data
+import landingPage from "json/landingPage.json";
 
 export default class LandingPage extends Component {
   render() {
@@ -7,6 +13,8 @@ export default class LandingPage extends Component {
       <div>
         {/* ...this.props => Passing semua props di class LandingPage ke Header component*/}
         <Header {...this.props}></Header>
+        {/* Passing data landingPage Hero */}
+        <Hero data={landingPage.hero} />
       </div>
     );
   }

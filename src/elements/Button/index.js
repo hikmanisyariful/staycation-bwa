@@ -80,6 +80,7 @@ Button.propTypes = {
   target: PropTypes.string, // untuk link external biasanya
   href: PropTypes.string,
   className: PropTypes.string,
+  isPrimary: PropTypes.bool,
   isDisabled: PropTypes.bool,
   isExternal: PropTypes.bool,
   isLoading: PropTypes.bool,
