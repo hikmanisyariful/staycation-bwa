@@ -10,6 +10,9 @@ import IconTravelers from "assets/images/icons/ic_traveler.svg";
 import IconTreasure from "assets/images/icons/ic_treasure.svg";
 import IconCities from "assets/images/icons/ic_cities.svg";
 
+// Import util
+import formatNumber from "utils/formatNumber";
+
 export default function Hero(props) {
   const showMostPicked = () => {
     window.scrollTo({
@@ -58,7 +61,7 @@ export default function Hero(props) {
                 alt={`${props.data.travelers} Travelers`}
               />
               <h6 className="mt-3">
-                {props.data.travelers}{" "}
+                {formatNumber(props.data.travelers)}{" "}
                 <span className="text-gray-500 font-weight-light">
                   Travelers
                 </span>
@@ -72,7 +75,7 @@ export default function Hero(props) {
                 alt={`${props.data.treasures} Travelers`}
               />
               <h6 className="mt-3">
-                {props.data.treasures}{" "}
+                {formatNumber(props.data.treasures)}{" "}
                 <span className="text-gray-500 font-weight-light">
                   Treasures
                 </span>
@@ -86,7 +89,7 @@ export default function Hero(props) {
                 alt={`${props.data.cities} Travelers`}
               />
               <h6 className="mt-3">
-                {props.data.cities}{" "}
+                {formatNumber(props.data.cities)}{" "}
                 <span className="text-gray-500 font-weight-light">Cities</span>
               </h6>
             </div>
