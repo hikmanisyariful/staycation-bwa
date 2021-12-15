@@ -43,6 +43,9 @@
 @import "utilities";
 @import "print";
 
+// Import custom scss
+@import "container-grid.scss";
+
 // Manual styles
 
 // Style brand icon
@@ -51,6 +54,7 @@
   font-weight: 500;
   font-family: "Poppins", sans-serif;
   color: $primary;
+
   &:hover {
     text-decoration: none;
     color: $primary; // Mencegah logo ketika dihover tidak berubah warna
@@ -74,13 +78,16 @@ header {
             color: $primary;
           }
         }
+
         a {
+
           // jika <a> tag punya className = "nav-link"
           &.nav-link {
             color: $gray-900;
             padding-left: 1rem;
             padding-right: 1rem;
             letter-spacing: 0.5px;
+
             &:hover {
               text-decoration: underline;
             }
