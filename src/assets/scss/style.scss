@@ -47,6 +47,10 @@
 @import "container-grid.scss";
 
 /* Manual styles */
+section {
+  margin-bottom: 100px;
+}
+
 // Style brand icon
 .brand-text-icon {
   font-size: 26px;
@@ -95,4 +99,9 @@ header {
       }
     }
   }
+}
+
+// Style card
+.card {
+  height: 100%;
 }
