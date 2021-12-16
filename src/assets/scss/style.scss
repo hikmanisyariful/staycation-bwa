@@ -142,6 +142,71 @@ header {
       font-size: .875rem;
     }
   }
+
+  // Style for MostPicked component
+  &.card-featured {
+    overflow: hidden;
+    cursor: pointer;
+    height: 100%;
+    border-radius: 15px;
+
+    // 
+    &:after {
+      position: absolute;
+      content: "";
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      transform: scale(1.1);
+      transition: .5s transform ease-in-out;
+      z-index: 2;
+      @include gradient-y(rgba($black, 0), ($black, .51), 0%, 100%);
+    }
+
+    .img-wrapper {
+      z-index: 1;
+      margin: 0;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      transform: scale(1.1);
+      transition: .25s transform ease-in-out;
+      border-radius: $border-radius;
+    }
+
+    .meta-wrapper {
+      z-index: 4;
+      color: $white;
+      padding: 20px;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 100%;
+      transform: translateY(0);
+      transition: .3s transform ease-in-out;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+
+    // Ketika hover
+    &:hover {
+      .meta-wrapper {
+        transform: translateY(-10px)
+      }
+
+      &:after {
+        transform: scale(1);
+      }
+
+      .img-wrapper {
+        transform: scale(1);
+      }
+    }
+  }
 }
 
 // Style image cover
