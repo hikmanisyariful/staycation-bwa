@@ -53,7 +53,7 @@ export default function Hero(props) {
 
           {/* Icons */}
           <div className="row mt-5">
-            <div className="col-auto" style={{ marginRight: 35 }}>
+            <div className="col-auto" style={{ marginRight: 0 }}>
               <img
                 width="32"
                 height="32"
