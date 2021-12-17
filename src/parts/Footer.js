@@ -18,7 +18,7 @@ export default function Footer() {
             </p>
           </div>
           {/* For Beginners */}
-          <div className="col-2 mr-5">
+          <div className="col-auto mr-4">
             <h6 className="mt-2">For Beginers</h6>
             <ul className="list-group list-group-flush">
               <li className="list-group-item">
@@ -40,7 +40,7 @@ export default function Footer() {
           </div>
 
           {/* Explore Us */}
-          <div className="col-2 mr-5">
+          <div className="col-auto mr-4">
             <h6 className="mt-2">Explore Us</h6>
             <ul className="list-group list-group-flush">
               <li className="list-group-item">
@@ -62,7 +62,7 @@ export default function Footer() {
           </div>
 
           {/* Connect Us */}
-          <div className="col-2">
+          <div className="col-auto">
             <h6 className="mt-2">Connect Us</h6>
             <ul className="list-group list-group-flush">
               <li className="list-group-item">
