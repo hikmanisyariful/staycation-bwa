@@ -5,6 +5,10 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 
+/* import _colorVariables.scss */
+@import "colorVariables";
+
+// import from original bootstrap
 @import "functions";
 @import "variables";
 @import "mixins";
