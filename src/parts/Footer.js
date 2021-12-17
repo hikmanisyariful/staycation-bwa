@@ -11,7 +11,7 @@ export default function Footer() {
     <footer>
       <div className="container">
         <div className="row">
-          <div className="col">
+          <div className="col-auto" style={{ width: 300, marginRight: 90 }}>
             <IconText />
             <p className="brand-tagline">
               We kaboom your beauty holiday instantly and memorable.
@@ -62,7 +62,7 @@ export default function Footer() {
           </div>
 
           {/* Connect Us */}
-          <div className="col-4">
+          <div className="col-2">
             <h6 className="mt-2">Connect Us</h6>
             <ul className="list-group list-group-flush">
               <li className="list-group-item">
