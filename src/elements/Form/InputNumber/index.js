@@ -20,3 +20,11 @@ Number.defaultProps = {
   prefix: "",
   suffix: ""
 };
+
+// Declaration Proptypes
+Number.propTypes = {
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  onChange: PropTypes.func,
+  placeholder: PropTypes.string,
+  outerClassName: propTypes.string
+};
