@@ -8,7 +8,7 @@ export default function Number(props) {
   const { value, placeholder, name, min, max, prefix, suffix } = props;
 
   // Local state
-  const [inputValue, setInputValue] = useState(`${prefix}${value}${suffix}`);
+  const [InputValue, setInputValue] = useState(`${prefix}${value}${suffix}`);
 
   // onChange function
   const onChange = e => {
@@ -55,7 +55,30 @@ export default function Number(props) {
       });
   };
 
-  return <div></div>;
+  return (
+    <div className={["input-number mb-3", props.outerClassName].join(" ")}>
+      <div className="input-group">
+        <div className="input-group-prepend">
+          <span className="input-group-text minus" onClick={minus}>
+            -
+          </span>
+        </div>
+        <input
+          className="form-control"
+          min={min}
+          max={max}
+          name={name}
+          pattern="[0-9]*"
+          placeholder={placeholder ? placeholder : "0"}
+          value={String(InputValue)}
+          onChange={onChanges}
+        />
+        <div className="input-group-append">
+          <span className="input-group-text plus">+</span>
+        </div>
+      </div>
+    </div>
+  );
 }
 
 // Declaration default props
@@ -73,3 +96,6 @@ Number.propTypes = {
   placeholder: PropTypes.string,
   outerClassName: propTypes.string
 };
+
+{
+}
