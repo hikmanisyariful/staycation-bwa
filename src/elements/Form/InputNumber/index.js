@@ -22,7 +22,7 @@ export default function Number(props) {
     // +value as sama as Number(value) - This is shorthand to change string to number
     if (isNumeric && +value <= max && +value >= min) {
       // Running function which is passed through props.onChange
-      // and passing data of object target to the function which will be further processed in the parent component.
+      // and passing data of object target (adjust event.target) to the function which will be further processed in the parent component.
       props.onChange({
         target: {
           name: name,
@@ -33,6 +33,26 @@ export default function Number(props) {
       // This is to view value on UI
       setInputValue(`${prefix}${value}${suffix}`);
     }
+  };
+
+  const minus = () => {
+    value > min &&
+      onChange({
+        target: {
+          name: name,
+          value: value - 1
+        }
+      });
+  };
+
+  const plus = () => {
+    value < max &&
+      onChange({
+        target: {
+          name: name,
+          value: value + 1
+        }
+      });
   };
 
   return <div></div>;
