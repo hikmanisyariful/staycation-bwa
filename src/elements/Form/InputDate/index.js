@@ -5,7 +5,10 @@ import "react-date-range/dist/styles.css"; // main css file
 import "react-date-range/dist/theme/default.css"; // theme css file
 import { DateRange } from "react-date-range";
 
+import formatDate from "utils/formatDate";
+
 import "./index.scss";
+import iconCalender from "assets/images/icons/icon-calendar.svg";
 
 export default function Date(props) {
   const { value, placeholder, name } = props;
@@ -14,7 +17,7 @@ export default function Date(props) {
   const [isShowed, setIsShowed] = useState(false);
 
   // datePicker function
-  datePickerChange = value => {
+  const datePickerChange = value => {
     // format event like event.target.value
     const target = {
       target: {
@@ -53,7 +56,40 @@ export default function Date(props) {
     value.endDate ? " - " + formatDate(value.endDate) : ""
   }`;
 
-  return <div></div>;
+  return (
+    <div
+      ref={refDate}
+      className={["input-date mb-3", props.outerClassName].join(" ")}
+    >
+      <div className="input-group">
+        <div className="input-group-prepend bg-gray-900">
+          <span className="input-group-text">
+            <img src={iconCalender} alt="icon calendar" />
+          </span>
+        </div>
+        <input
+          readOnly
+          type="text"
+          className="form-control"
+          value={displayDate}
+          placeholder={placeholder}
+          onClick={() => setIsShowed(!isShowed)}
+        />
+
+        {isShowed && (
+          <div className="date-range-wrapper">
+            <DateRange
+              editableDateInputs={true}
+              onChange={datePickerChange}
+              moveRangeOnFirstSelection={false}
+              onRangeFocusChange={check}
+              ranges={[value]}
+            />
+          </div>
+        )}
+      </div>
+    </div>
+  );
 }
 
 Date.propTypes = {
