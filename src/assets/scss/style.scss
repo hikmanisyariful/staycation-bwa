@@ -6,7 +6,7 @@
  */
 
 /* Import font-family : poppins */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;700&display=swap");
 
 /* import _colorVariables.scss */
 @import "colorVariables";
@@ -55,7 +55,7 @@
 
 /* Manual styles */
 section {
-  margin-bottom: 100px;
+  margin-bottom: 70px;
 }
 
 // Style brand icon
@@ -90,7 +90,6 @@ header {
         }
 
         a {
-
           // jika <a> tag punya className = "nav-link"
           &.nav-link {
             color: $gray-900;
@@ -117,7 +116,7 @@ header {
     z-index: 3;
     font-size: 0.875rem;
     background-color: $pink;
-    padding: .25rem 1.25rem;
+    padding: 0.25rem 1.25rem;
     position: absolute;
     top: 0;
     right: 0;
@@ -146,7 +145,7 @@ header {
     }
 
     span {
-      font-size: .875rem;
+      font-size: 0.875rem;
     }
   }
 
@@ -157,7 +156,7 @@ header {
     height: 100%;
     border-radius: 15px;
 
-    // 
+    //
     &:after {
       position: absolute;
       content: "";
@@ -166,9 +165,9 @@ header {
       bottom: 0;
       left: 0;
       transform: scale(1.1);
-      transition: .5s transform ease-in-out;
+      transition: 0.5s transform ease-in-out;
       z-index: 2;
-      @include gradient-y(rgba($black, 0), ($black, .51), 0%, 100%);
+      @include gradient-y(rgba($black, 0), ($black, 0.51), 0%, 100%);
     }
 
     .img-wrapper {
@@ -180,7 +179,7 @@ header {
       bottom: 0;
       left: 0;
       transform: scale(1.1);
-      transition: .25s transform ease-in-out;
+      transition: 0.25s transform ease-in-out;
       border-radius: $border-radius;
     }
 
@@ -193,7 +192,7 @@ header {
       bottom: 0;
       width: 100%;
       transform: translateY(0);
-      transition: .3s transform ease-in-out;
+      transition: 0.3s transform ease-in-out;
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
@@ -202,7 +201,7 @@ header {
     // Ketika hover
     &:hover {
       .meta-wrapper {
-        transform: translateY(-10px)
+        transform: translateY(-10px);
       }
 
       &:after {
