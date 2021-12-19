@@ -6,17 +6,17 @@ import Button from "elements/Button";
 import "./index.scss";
 
 export default function Breadcrumb(props) {
-  const { data, className } = props;
+  const { data } = props;
 
   return (
-    <nav arial-label="breadcrumb">
-      <ol className={className.join(" ")}>
+    <nav aria-label="breadcrumb">
+      <ol className="breadcrumb">
         {data.map((item, index) => {
           return (
             <li
               key={`breadcrumb-${index}`}
               className={`breadcrumb-item${
-                index === data.length - 1 ? "active" : ""
+                index === data.length - 1 ? " active" : ""
               }`}
             >
               {index === data.length - 1 ? (

@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 
 // import { InputNumber } from "elements/Form";
-import { InputDate } from "elements/Form";
+// import { InputDate } from "elements/Form";
+import Breadcrumb from "elements/Breadcrumb";
 
 export default class Example extends Component {
   state = {
@@ -9,7 +10,11 @@ export default class Example extends Component {
       startDate: new Date(),
       endDate: new Date(),
       key: "selection"
-    }
+    },
+    breadcrumb: [
+      { pageTitle: "Home", pageHref: "" },
+      { pageTitle: "House Details", pageHref: "" }
+    ]
   };
 
   handleChange = e => {
@@ -32,12 +37,13 @@ export default class Example extends Component {
               name="value"
               value={this.state.value}
             /> */}
-            <InputDate
+            {/* <InputDate
               max={30}
               onChange={this.handleChange}
               name="value"
               value={this.state.value}
-            />
+            /> */}
+            <Breadcrumb data={this.state.breadcrumb} />
           </div>
         </div>
       </div>
