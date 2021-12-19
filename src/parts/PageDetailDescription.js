@@ -1,11 +1,11 @@
 import React from "react";
-// import ReactHtmlParser from "react-html-parser";
+import ReactHtmlParser from "react-html-parser";
 
 export default function PageDetailDescription({ data }) {
   return (
     <main>
       <h4>About the place</h4>
-      {/* {ReactHtmlParser(data.description)} */}
+      {ReactHtmlParser(data.description)}
       <div className="row" style={{ marginTop: 30 }}>
         {data.features.map((feature, index) => {
           return (

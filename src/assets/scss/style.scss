@@ -58,6 +58,13 @@ section {
   margin-bottom: 70px;
 }
 
+main {
+  p {
+    color: $gray-400;
+    font-weight: 300;
+  }
+}
+
 // Style brand icon
 .brand-text-icon {
   font-size: 26px;
