@@ -12,7 +12,6 @@ import iconCalender from "assets/images/icons/icon-calendar.svg";
 
 export default function Date(props) {
   const { value, placeholder, name } = props;
-  console.log("INPUTDATE 1 - THIS IS VALUE INPUT DATE =====", value);
 
   // To toggle date picker
   const [isShowed, setIsShowed] = useState(false);
@@ -20,7 +19,6 @@ export default function Date(props) {
   // datePicker function
   const datePickerChange = item => {
     // format event like event.target.value
-    console.log("INPUTDATE 2 - EVENT", item);
     const target = {
       target: {
         value: item.selection,
@@ -51,15 +49,12 @@ export default function Date(props) {
 
   // check function
   const check = focus => {
-    console.log("INPUTDATE 4 - FOCUS", focus, focus.indexOf(1));
     focus.indexOf(1) < 0 && setIsShowed(false);
   };
 
   let displayDate = `${value.startDate ? formatDate(value.startDate) : ""}${
     value.endDate ? " - " + formatDate(value.endDate) : ""
   }`;
-
-  console.log("INPUTDATE 3 - DISPLAY DATE", displayDate);
 
   return (
     <div

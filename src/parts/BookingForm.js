@@ -21,7 +21,6 @@ export default class BookingForm extends Component {
 
   // function for update data
   updateData = e => {
-    console.log("BOOKINGFORM", e.target);
     this.setState({
       ...this.state,
       data: {
@@ -52,7 +51,6 @@ export default class BookingForm extends Component {
         startDate.setDate(startDate.getDate() + +data.duration - 1) // minus 1 because booking hotel hitungannya per malam, bukan per hari
       );
 
-      console.log(startDate, endDate);
       this.setState({
         ...this.state,
         data: {
@@ -75,7 +73,7 @@ export default class BookingForm extends Component {
         {/* Title Info */}
         <h4 className="mb-3">Start Booking</h4>
         <h5 className="h2 text-teal mb-4">
-          Rp. {itemDetails.price}{" "}
+          ${itemDetails.price}{" "}
           <span className="text-gray-500 font-weight-light">
             per {itemDetails.unit}
           </span>
