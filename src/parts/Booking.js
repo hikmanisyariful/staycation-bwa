@@ -30,6 +30,52 @@ export default class Booking extends Component {
     });
   };
 
+  componentDidUpdate(prevProps, prevState) {
+    const { data } = this.state;
+    console.log("componentDidUpdate");
+    console.log(prevState.data, data);
+
+    if (prevState.data.duration !== data.duration) {
+      console.log("=========== TEST ==============");
+      console.log("THIS IS STARTDATE", data.date.startDate);
+      const startDate = new Date(data.date.startDate);
+      const endDate = new Date(
+        data.date.endDate.setDate(startDate.getDate() + +data.duration)
+      );
+
+      console.log("startDate : ", startDate);
+      console.log("endDate : ", endDate);
+      console.log("=========== TEST ==============");
+
+      this.setState({
+        ...this.state,
+        data: {
+          ...this.state.data,
+          date: {
+            ...this.state.data.date,
+            endDate: endDate
+          }
+        }
+      });
+
+      console.log("This update data : ", data);
+    }
+
+    if (prevState.data.date !== data.date) {
+      const startDate = new Date(data.date.startDate);
+      const endDate = new Date(data.date.endDate);
+      const countDuration = new Date(endDate - startDate).getDate() - 1;
+
+      this.setState({
+        ...this.state,
+        data: {
+          ...this.state.data,
+          duration: countDuration
+        }
+      });
+    }
+  }
+
   render() {
     const { data } = this.state;
     const { itemDetails } = this.props;

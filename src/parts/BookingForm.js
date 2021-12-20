@@ -48,11 +48,20 @@ export default class BookingForm extends Component {
     }
 
     if (prevState.data.duration !== data.duration) {
-      console.log("2.", prevState.data.duration, data.duration);
+      // console.log("2.", prevState.data.duration, data.duration);
+      // const startDate = new Date(data.date.startDate);
+      // // minus 1 because booking hotel hitungannya per malam, bukan per hari
+      // const endDate = new Date(
+      //   startDate.setDate(startDate.getDate() + +data.duration - 1)
+      // );
+      // console.log("=========== TEST ==============");
+      // console.log(startDate.setDate(startDate.getDate() + +data.duration - 1));
+      // console.log("startDate : ", startDate, "endDate : ", endDate);
+      // console.log("=========== TEST ==============");
+
       const startDate = new Date(data.date.startDate);
-      // minus 1 because booking hotel hitungannya per malam, bukan per hari
       const endDate = new Date(
-        startDate.setDate(startDate.getDate() + +data.duration - 1)
+        data.date.endDate.setDate(startDate.getDate() + +data.duration)
       );
 
       this.setState({
