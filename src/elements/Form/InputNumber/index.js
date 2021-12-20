@@ -66,6 +66,7 @@ export default function Number(props) {
           </span>
         </div>
         <input
+          readOnly
           className="form-control"
           min={min}
           max={max}

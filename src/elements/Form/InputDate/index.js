@@ -1,27 +1,29 @@
 import React, { useState, useRef, useEffect } from "react";
 import PropTypes from "prop-types";
 
-import "react-date-range/dist/styles.css"; // main css file
-import "react-date-range/dist/theme/default.css"; // theme css file
 import { DateRange } from "react-date-range";
 
-import formatDate from "utils/formatDate.js";
-
 import "./index.scss";
+import "react-date-range/dist/styles.css"; // main css file
+import "react-date-range/dist/theme/default.css"; // theme css file
+
+import formatDate from "utils/formatDate.js";
 import iconCalender from "assets/images/icons/icon-calendar.svg";
 
 export default function Date(props) {
   const { value, placeholder, name } = props;
+  console.log("INPUTDATE 1 - THIS IS VALUE INPUT DATE =====", value);
 
   // To toggle date picker
   const [isShowed, setIsShowed] = useState(false);
 
   // datePicker function
-  const datePickerChange = value => {
+  const datePickerChange = item => {
     // format event like event.target.value
+    console.log("INPUTDATE 2 - EVENT", item);
     const target = {
       target: {
-        value: value.selection,
+        value: item.selection,
         name: name
       }
     };
@@ -49,12 +51,15 @@ export default function Date(props) {
 
   // check function
   const check = focus => {
+    console.log("INPUTDATE 4 - FOCUS", focus, focus.indexOf(1));
     focus.indexOf(1) < 0 && setIsShowed(false);
   };
 
-  const displayDate = `${value.startDate ? formatDate(value.startDate) : ""}${
+  let displayDate = `${value.startDate ? formatDate(value.startDate) : ""}${
     value.endDate ? " - " + formatDate(value.endDate) : ""
   }`;
+
+  console.log("INPUTDATE 3 - DISPLAY DATE", displayDate);
 
   return (
     <div

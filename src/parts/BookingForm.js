@@ -21,6 +21,7 @@ export default class BookingForm extends Component {
 
   // function for update data
   updateData = e => {
+    console.log("BOOKINGFORM", e.target);
     this.setState({
       ...this.state,
       data: {
@@ -32,6 +33,7 @@ export default class BookingForm extends Component {
 
   componentDidUpdate(prevProps, prevState) {
     const { data } = this.state;
+
     if (prevState.data.date !== data.date) {
       const startDate = new Date(data.date.startDate);
       const endDate = new Date(data.date.endDate);
@@ -47,15 +49,17 @@ export default class BookingForm extends Component {
     if (prevState.data.duration !== data.duration) {
       const startDate = new Date(data.date.startDate);
       const endDate = new Date(
-        startDate.setDate(startDate.getDate() + +data.duration1 - 1) // minus 1 because booking hotel hitungannya per malam, bukan per hari
+        startDate.setDate(startDate.getDate() + +data.duration - 1) // minus 1 because booking hotel hitungannya per malam, bukan per hari
       );
+
+      console.log(startDate, endDate);
       this.setState({
         ...this.state,
         data: {
           ...this.state.data,
           date: {
             ...this.state.data.date,
-            endDate
+            endDate: endDate
           }
         }
       });
