@@ -17,6 +17,17 @@ export default class BookingForm extends Component {
     };
   }
 
+  // function for update data
+  updateData = e => {
+    this.setState({
+      ...this.state,
+      data: {
+        ...this.state.data,
+        [e.target.name]: e.target.value
+      }
+    });
+  };
+
   render() {
     return <div></div>;
   }
