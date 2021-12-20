@@ -7,7 +7,6 @@ const formatDate = date => {
   });
 
   const [{ value: mo }, , { value: da }] = dtf.formatToParts(d);
-  console.log("FORMAT DATE>>>>>>>", `${da} ${mo}`);
   return `${da} ${mo}`;
 };
 
