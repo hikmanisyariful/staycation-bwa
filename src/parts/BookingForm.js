@@ -28,6 +28,38 @@ export default class BookingForm extends Component {
     });
   };
 
+  componentDidUpdate(prevProps, prevState) {
+    const { data } = this.state;
+    if (prevState.data.date !== data.date) {
+      const startDate = new Date(data.date.startDate);
+      const endDate = new Date(data.date.endDate);
+      const countDuration = new Date(endDate - startDate).getDate();
+      this.setState({
+        data: {
+          ...this.state.date,
+          duration: countDuration
+        }
+      });
+    }
+
+    if (prevState.data.duration !== data.duration) {
+      const startDate = new Date(data.date.startDate);
+      const endDate = new Date(
+        startDate.setDate(startDate.getDate() + +data.duration1 - 1) // minus 1 because booking hotel hitungannya per malam, bukan per hari
+      );
+      this.setState({
+        ...this.state,
+        data: {
+          ...this.state.data,
+          date: {
+            ...this.state.data.date,
+            endDate
+          }
+        }
+      });
+    }
+  }
+
   render() {
     return <div></div>;
   }
