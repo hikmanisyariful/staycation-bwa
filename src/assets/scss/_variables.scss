@@ -244,7 +244,7 @@ $line-height-sm: 1.5 !default;
 $border-width: 1px !default;
 $border-color: $gray-300 !default;
 
-$border-radius: 0.25rem !default;
+$border-radius: 0.9875rem !default; // Ubah $border-radius disini
 $border-radius-lg: 0.3rem !default;
 $border-radius-sm: 0.2rem !default;
 
@@ -862,7 +862,7 @@ $jumbotron-bg: $gray-200 !default;
 $card-spacer-y: 0.75rem !default;
 $card-spacer-x: 1.25rem !default;
 $card-border-width: $border-width !default;
-$card-border-radius: $border-radius !default;
+$card-border-radius: $border-radius !default; // karena ingin semua border radius untuk card 15px, bisa ubah $border-radius
 $card-border-color: rgba($black, 0.125) !default;
 $card-inner-border-radius: subtract(
   $card-border-radius,

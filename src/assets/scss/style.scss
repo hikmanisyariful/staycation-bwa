@@ -117,7 +117,12 @@ header {
 /* Helper style = global style - is usually used*/
 // Style card
 .card {
-  height: 100%;
+  &.bordered {
+    border: 1px solid $gray-200;
+  }
+
+  // border-radius: 15px;  // sudah di setting secara default di variable.scss
+  // height: 100%;
 
   .tag {
     z-index: 3;
@@ -161,7 +166,7 @@ header {
     overflow: hidden;
     cursor: pointer;
     height: 100%;
-    border-radius: 15px;
+    // border-radius: 15px;
 
     //
     &:after {

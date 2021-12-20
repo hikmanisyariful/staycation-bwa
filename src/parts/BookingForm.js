@@ -72,7 +72,7 @@ export default class BookingForm extends Component {
         <h4 className="mb-3">Start Booking</h4>
         <h5 className="h2 text-teal mb-4">
           Rp. {itemDetails.price}{" "}
-          <span className="text-gary-500 font-weight-light">
+          <span className="text-gray-500 font-weight-light">
             per {itemDetails.unit}
           </span>
         </h5>
