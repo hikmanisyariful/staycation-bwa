@@ -11,7 +11,7 @@ export default class Booking extends Component {
         duration: 1,
         date: {
           startDate: new Date(),
-          endDate: new Date(),
+          endDate: new Date(new Date().setDate(new Date().getDate() + 1)),
           key: "selection"
         }
       }
@@ -20,7 +20,7 @@ export default class Booking extends Component {
 
   // function for update data
   updateData = e => {
-    console.log("Booking - UpdateData", e.target);
+    // console.log("Booking - UpdateData", e.target);
     this.setState({
       ...this.state,
       data: {
@@ -32,20 +32,13 @@ export default class Booking extends Component {
 
   componentDidUpdate(prevProps, prevState) {
     const { data } = this.state;
-    console.log("componentDidUpdate");
-    console.log(prevState.data, data);
 
     if (prevState.data.duration !== data.duration) {
-      console.log("=========== TEST ==============");
-      console.log("THIS IS STARTDATE", data.date.startDate);
       const startDate = new Date(data.date.startDate);
+      const tempStartDate = new Date(data.date.startDate);
       const endDate = new Date(
-        data.date.endDate.setDate(startDate.getDate() + +data.duration)
+        tempStartDate.setDate(startDate.getDate() + +data.duration)
       );
-
-      console.log("startDate : ", startDate);
-      console.log("endDate : ", endDate);
-      console.log("=========== TEST ==============");
 
       this.setState({
         ...this.state,
@@ -57,8 +50,6 @@ export default class Booking extends Component {
           }
         }
       });
-
-      console.log("This update data : ", data);
     }
 
     if (prevState.data.date !== data.date) {
