@@ -5,6 +5,7 @@ import "assets/scss/style.scss";
 // Import Pages
 import LandingPage from "pages/LandingPage";
 import DetailsPage from "pages/DetailsPage";
+import Checkout from "pages/Checkout";
 import Example from "pages/Example";
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
       <Routes>
         <Route exact path="/" element={<LandingPage />} />
         <Route exact path="/properties/:id" element={<DetailsPage />} />
+        <Route path="/checkout" element={<Checkout />} />
         <Route path="/example" element={<Example />} />
       </Routes>
     </div>
