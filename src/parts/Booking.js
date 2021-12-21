@@ -2,6 +2,7 @@ import React, { Component } from "react";
 
 import PropTypes from "prop-types";
 import { InputNumber, InputDate } from "elements/Form";
+import Button from "elements/Button";
 
 export default class Booking extends Component {
   constructor(props) {
@@ -69,7 +70,7 @@ export default class Booking extends Component {
 
   render() {
     const { data } = this.state;
-    const { itemDetails } = this.props;
+    const { itemDetails, startBooking } = this.props;
 
     return (
       <div className="card bordered" style={{ padding: "60px 80px" }}>
@@ -96,6 +97,33 @@ export default class Booking extends Component {
         {/* InputDate */}
         <label htmlFor="date">Pick a date</label>
         <InputDate onChange={this.updateData} name="date" value={data.date} />
+
+        {/* Info result */}
+        <h6
+          className="text-gray-500 font-weight-light"
+          style={{ marginBottom: 40 }}
+        >
+          You will pay{" "}
+          <span className="text-gray-900">
+            {itemDetails.price * data.duration} USD
+          </span>
+          {" for "}
+          <span className="text-gray-900">
+            {data.duration} {itemDetails.unit}
+            {data.duration > 1 && "s"}
+          </span>
+        </h6>
+
+        {/* Button */}
+        <Button
+          className="btn"
+          hasShadow
+          isPrimary
+          isBlock
+          onClick={startBooking}
+        >
+          Continue to Booking
+        </Button>
       </div>
     );
   }
