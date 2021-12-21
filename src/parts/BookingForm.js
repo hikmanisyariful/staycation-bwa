@@ -9,10 +9,10 @@ export default class BookingForm extends Component {
     super(props);
     this.state = {
       data: {
-        duration: "1",
+        duration: 1,
         date: {
           startDate: new Date(),
-          endDate: new Date(),
+          endDate: new Date(new Date().setDate(new Date().getDate() + 1)),
           key: "selection"
         }
       }
@@ -21,7 +21,6 @@ export default class BookingForm extends Component {
 
   // function for update data
   updateData = e => {
-    console.log("BookingForm", e.target);
     this.setState({
       ...this.state,
       data: {
@@ -34,34 +33,11 @@ export default class BookingForm extends Component {
   componentDidUpdate(prevProps, prevState) {
     const { data } = this.state;
 
-    if (prevState.data.date !== data.date) {
-      console.log("1.", prevState.data.date, data.date);
-      const startDate = new Date(data.date.startDate);
-      const endDate = new Date(data.date.endDate);
-      const countDuration = new Date(endDate - startDate).getDate();
-      this.setState({
-        data: {
-          ...this.state.date,
-          duration: countDuration
-        }
-      });
-    }
-
     if (prevState.data.duration !== data.duration) {
-      // console.log("2.", prevState.data.duration, data.duration);
-      // const startDate = new Date(data.date.startDate);
-      // // minus 1 because booking hotel hitungannya per malam, bukan per hari
-      // const endDate = new Date(
-      //   startDate.setDate(startDate.getDate() + +data.duration - 1)
-      // );
-      // console.log("=========== TEST ==============");
-      // console.log(startDate.setDate(startDate.getDate() + +data.duration - 1));
-      // console.log("startDate : ", startDate, "endDate : ", endDate);
-      // console.log("=========== TEST ==============");
-
       const startDate = new Date(data.date.startDate);
+      const tempStartDate = new Date(data.date.startDate);
       const endDate = new Date(
-        data.date.endDate.setDate(startDate.getDate() + +data.duration)
+        tempStartDate.setDate(startDate.getDate() + +data.duration)
       );
 
       this.setState({
@@ -72,6 +48,20 @@ export default class BookingForm extends Component {
             ...this.state.data.date,
             endDate: endDate
           }
+        }
+      });
+    }
+
+    if (prevState.data.date !== data.date) {
+      const startDate = new Date(data.date.startDate);
+      const endDate = new Date(data.date.endDate);
+      const countDuration = new Date(endDate - startDate).getDate() - 1;
+
+      this.setState({
+        ...this.state,
+        data: {
+          ...this.state.data,
+          duration: countDuration
         }
       });
     }
@@ -116,9 +106,10 @@ export default class BookingForm extends Component {
           <span className="text-gray-900">
             {itemDetails.price * data.duration} USD
           </span>
-          {" per "}
+          {" for "}
           <span className="text-gray-900">
             {data.duration} {itemDetails.unit}
+            {data.duration > 1 && "s"}
           </span>
         </h6>
 

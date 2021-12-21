@@ -5,8 +5,8 @@ import Header from "parts/Header";
 import PageDetailTitle from "parts/PageDetailTitle";
 import FeaturedImage from "parts/FeaturedImage";
 import PageDetailDescription from "parts/PageDetailDescription";
-// import BookingForm from "parts/BookingForm";
-import Booking from "parts/Booking";
+import BookingForm from "parts/BookingForm";
+// import Booking from "parts/Booking";
 
 import ItemDetails from "json/itemDetails.json";
 
@@ -32,12 +32,12 @@ export default class DetailsPage extends Component {
             <div className="col-7 pr-5">
               <PageDetailDescription data={ItemDetails} />
             </div>
-            {/* <div className="col-5">
-              <BookingForm itemDetails={ItemDetails} />
-            </div> */}
             <div className="col-5">
-              <Booking itemDetails={ItemDetails} />
+              <BookingForm itemDetails={ItemDetails} />
             </div>
+            {/* <div className="col-5">
+              <Booking itemDetails={ItemDetails} />
+            </div> */}
           </div>
         </section>
       </>
