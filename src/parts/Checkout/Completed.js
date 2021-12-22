@@ -10,7 +10,7 @@ export default function Completed(props) {
           <img
             src={completedImg}
             alt="completed checkout apartment"
-            className="img-fli"
+            className="img-fluid"
           />
           <p className="text-gray-500">
             We will inform you via email later once the transaction has been

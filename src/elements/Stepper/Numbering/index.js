@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 import "./index.scss";
 
 export default function Numbering({ style, className, data, current }) {
-  console.log("PROPS NUMBERING", style, className, data, current);
+  // console.log("PROPS NUMBERING", style, className, data, current);
   const KeysOfData = Object.keys(data);
 
   return (

@@ -6,6 +6,7 @@ import logoBca from "assets/images/logo-bca.jpg";
 import logoMandiri from "assets/images/logo-mandiri.jpg";
 
 export default function Payment(props) {
+  // console.log("PAYMENT", props);
   const { data, ItemDetails, checkout } = props;
 
   const tax = 10;
@@ -64,7 +65,7 @@ export default function Payment(props) {
           />
 
           {/* Input text - bank name */}
-          <label htmlFor="bankName">Upload Bukti Transfer</label>
+          <label htmlFor="bankName">Asal Bank</label>
           <InputText
             id="bankName"
             name="bankName"
@@ -74,7 +75,7 @@ export default function Payment(props) {
           />
 
           {/* Input text - bankHolder*/}
-          <label htmlFor="bankName">Nama Pengirim</label>
+          <label htmlFor="bankHolder">Nama Pengirim</label>
           <InputText
             id="bankHolder"
             name="bankHolder"
