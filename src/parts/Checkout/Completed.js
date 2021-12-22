@@ -4,7 +4,7 @@ import completedImg from "assets/images/completed.svg";
 
 export default function Completed(props) {
   return (
-    <div className="container" style={{ marginBottom }}>
+    <div className="container" style={{ marginBottom: 30 }}>
       <div className="row justify-content-center text-center">
         <div className="col-4">
           <img

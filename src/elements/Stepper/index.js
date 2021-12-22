@@ -30,3 +30,8 @@ Stepper.propTypes = {
   data: PropTypes.object.isRequired,
   initialStep: PropTypes.string
 };
+
+export { default as Controller } from "./Controller";
+export { default as MainContent } from "./MainContent";
+export { default as Meta } from "./Meta";
+export { default as Numbering } from "./Numbering";
