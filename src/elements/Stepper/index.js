@@ -20,14 +20,16 @@ export default function Stepper(props) {
   };
 
   const nextStep = () => {
+    console.log("AKTIFKAN NEXT STEP");
     if (+indexStep < totalStep) setCurrentStep(stepsKeys[indexStep + 1]);
   };
 
+  console.log(CurrentStep);
   return <>{props.children(prevStep, nextStep, CurrentStep, steps)}</>;
 }
 
 Stepper.propTypes = {
-  data: PropTypes.object.isRequired,
+  steps: PropTypes.object.isRequired,
   initialStep: PropTypes.string
 };
 

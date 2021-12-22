@@ -32,7 +32,7 @@ export default class Checkout extends Component {
   onChange = event => {
     this.setState({
       data: {
-        ...this.state.date,
+        ...this.state.data,
         [event.target.name]: event.target.value
       }
     });
@@ -86,7 +86,7 @@ export default class Checkout extends Component {
       <>
         <Header isCentered />
         <Stepper steps={steps}>
-          {(prevStep, nextStep, CurrentStep, steps) => {
+          {(prevStep, nextStep, CurrentStep, steps) => (
             <>
               <Numbering
                 data={steps}
@@ -94,9 +94,9 @@ export default class Checkout extends Component {
                 style={{ marginBottom: 50 }}
               />
 
-              <Meta data={steps} curent={CurrentStep} />
+              <Meta data={steps} current={CurrentStep} />
 
-              <MainContent data={steps} curent={CurrentStep} />
+              <MainContent data={steps} current={CurrentStep} />
 
               {CurrentStep === "bookingInformation" && (
                 <Controller>
@@ -169,8 +169,8 @@ export default class Checkout extends Component {
                   </Button>
                 </Controller>
               )}
-            </>;
-          }}
+            </>
+          )}
         </Stepper>
       </>
     );

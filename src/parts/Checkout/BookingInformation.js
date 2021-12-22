@@ -37,45 +37,46 @@ export default function BookingInformation(props) {
             </div>
           </div>
         </div>
-      </div>
-      <div className="col-5 py-5" style={{ paddingLeft: 80 }}>
-        {/* firstName */}
-        <label htmlFor="firstName">First Name</label>
-        <InputText
-          id="firstName"
-          name="firstName"
-          value={data.firstName}
-          onChange={props.onChange}
-        />
 
-        {/* lastName */}
-        <label htmlFor="lastName">Last Name</label>
-        <InputText
-          id="lastName"
-          name="lastName"
-          value={data.lastName}
-          onChange={props.onChange}
-        />
+        <div className="col-5 py-5" style={{ paddingLeft: 80 }}>
+          {/* firstName */}
+          <label htmlFor="firstName">First Name</label>
+          <InputText
+            id="firstName"
+            name="firstName"
+            value={data.firstName}
+            onChange={props.onChange}
+          />
 
-        {/* email */}
-        <label htmlFor="lastName">Email Address</label>
-        <InputText
-          id="email"
-          name="email"
-          type="email"
-          value={data.email}
-          onChange={props.onChange}
-        />
+          {/* lastName */}
+          <label htmlFor="lastName">Last Name</label>
+          <InputText
+            id="lastName"
+            name="lastName"
+            value={data.lastName}
+            onChange={props.onChange}
+          />
 
-        {/* email */}
-        <label htmlFor="phone">Phone Number</label>
-        <InputText
-          id="phone"
-          name="phone"
-          type="tel"
-          value={data.phone}
-          onChange={props.onChange}
-        />
+          {/* email */}
+          <label htmlFor="lastName">Email Address</label>
+          <InputText
+            id="email"
+            name="email"
+            type="email"
+            value={data.email}
+            onChange={props.onChange}
+          />
+
+          {/* email */}
+          <label htmlFor="phone">Phone Number</label>
+          <InputText
+            id="phone"
+            name="phone"
+            type="tel"
+            value={data.phone}
+            onChange={props.onChange}
+          />
+        </div>
       </div>
     </div>
   );

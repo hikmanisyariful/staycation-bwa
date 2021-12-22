@@ -22,7 +22,7 @@ export default function File(props) {
       <div className="input-group">
         {prepend && (
           <div className="input-group-prepend bg-gray-900">
-            <span className="input-group-tex">{prepend}</span>
+            <span className="input-group-text">{prepend}</span>
           </div>
         )}
         <input
@@ -32,7 +32,7 @@ export default function File(props) {
           type="file"
           className="d-none"
           value={value}
-          // onChange={onChange}
+          onChange={props.onChange}
         />
         <input
           onClick={() => refInputFile.current.click()}
