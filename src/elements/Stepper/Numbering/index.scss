@@ -36,6 +36,7 @@ ol.stepper {
       transition: 0.35s transform ease-in-out;
     }
 
+    
     &:not(:last-child) {
       margin-right: 60px;
       &:before{
