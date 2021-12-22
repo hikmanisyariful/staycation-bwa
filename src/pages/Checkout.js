@@ -30,6 +30,7 @@ export default class Checkout extends Component {
   };
 
   onChange = event => {
+    // console.log("ON CHANGE in Checkout");
     this.setState({
       data: {
         ...this.state.data,
@@ -145,7 +146,7 @@ export default class Checkout extends Component {
                     )}
                   <Button
                     className="btn"
-                    type="link"
+                    type="button"
                     isBlock
                     isLight
                     onClick={prevStep}
@@ -158,12 +159,13 @@ export default class Checkout extends Component {
               {CurrentStep === "completed" && (
                 <Controller>
                   <Button
-                    className="btn mb-3"
+                    className="btn"
                     type="link"
                     isBlock
                     isPrimary
                     hasShadow
                     href=""
+                    style={{ paddingTop: 12 }}
                   >
                     Back To Home
                   </Button>
