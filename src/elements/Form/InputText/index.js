@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 
 import "./index.scss";
-import { addEmitHelper } from "typescript";
 
 export default function Text(props) {
   const {
@@ -66,7 +65,7 @@ export default function Text(props) {
           </div>
         )}
       </div>
-      {HasError && <span className="error-helper">{hasError}</span>}
+      {HasError && <span className="error-helper">{HasError}</span>}
     </div>
   );
 }

@@ -32,7 +32,7 @@ export default function File(props) {
           type="file"
           className="d-none"
           value={value}
-          onChange={onChange}
+          // onChange={onChange}
         />
         <input
           onClick={() => refInputFile.current.click()}
@@ -46,7 +46,6 @@ export default function File(props) {
           </div>
         )}
       </div>
-      {HasError && <span className="error-helper">{hasError}</span>}
     </div>
   );
 }
