@@ -53,6 +53,7 @@
 /* Import custom scss */
 @import "container-grid.scss";
 
+
 /* Manual styles */
 section {
   margin-bottom: 70px;
@@ -97,6 +98,7 @@ header {
         }
 
         a {
+
           // jika <a> tag punya className = "nav-link"
           &.nav-link {
             color: $gray-900;
